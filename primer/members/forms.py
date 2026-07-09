@@ -9,6 +9,10 @@ class MemberForm(ModelForm):
     class Meta:
         model = Member
         fields = ['firstname', 'lastname']
+        labels = {
+            'firstname': 'Nombre',
+            'lastname': 'Apellido',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,5 +24,5 @@ class MemberForm(ModelForm):
                 Column('lastname', css_class='form-group col-md-6 mb-0'),
                 css_class='form-row'
             ),
-            Submit('submit', 'Submit')
+            Submit('submit', 'Enviar')
         )
